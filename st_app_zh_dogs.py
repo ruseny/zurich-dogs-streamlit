@@ -12,8 +12,11 @@ def load_data(path):
     df = pd.read_csv(path)
     return df
 
-df_dogs = load_data("data/processed/zurich_dogs.csv")
-df_districts = load_data("data/processed/district_info.csv")
+df_dogs_r = load_data("data/processed/zurich_dogs.csv")
+df_districts_r = load_data("data/processed/district_info.csv")
+
+df_dogs = deepcopy(df_dogs_r)
+df_districts = deepcopy(df_districts_r)
 
 with open("data/raw/stzh.adm_stadtkreise_a.json") as jsonfile:
     geo_district = json.load(jsonfile)
