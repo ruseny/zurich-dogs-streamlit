@@ -63,11 +63,11 @@ if display_info == "Average age of dogs":
     dog_age = df_subset.groupby("district")["dog_age"].mean()
     df_stats = pd.DataFrame(dog_age).reset_index().rename(columns = {"dog_age" : "resp_var"})
 elif display_info == "Total number of dogs":
-    dog_count = df_subset.value_counts("district")
-    df_stats = pd.DataFrame(dog_count).sort_index().reset_index().rename(columns = {0 : "resp_var"}).reset_index(drop=True)
+    dog_count = df_subset.groupby("district").size()
+    df_stats = pd.DataFrame(dog_count).reset_index().rename(columns = {0 : "resp_var"})
 elif display_info == "Dog number per 1000 people":
-    dog_count = df_subset.value_counts("district")
-    df_stats = pd.DataFrame(dog_count).sort_index().reset_index().rename(columns = {0 : "num_dogs"}).reset_index(drop=True)
+    dog_count = df_subset.groupby("district").size()
+    df_stats = pd.DataFrame(dog_count).reset_index().rename(columns = {0 : "num_dogs"})
     df_stats = df_stats.merge(df_districts, on = "district")
     df_stats["resp_var"] = (df_stats["num_dogs"] / df_stats["pop"]) * 1000
 
