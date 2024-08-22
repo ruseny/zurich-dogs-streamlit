@@ -4,7 +4,7 @@ The purpose of this project is to create a simple streamlit app with an interact
 
 Data folder contains raw and processed data on dogs and districts of Zutich. Notebooks folder has one notebook for data cleaning and processing.
 
-To run the streamlit app online: [link]
+To run the streamlit app online: https://zurich-dogs-app-ruseny.streamlit.app/
 
 To run the streamlit app locally:
 - Clone the repo
