@@ -6,7 +6,7 @@ Data folder contains raw and processed data on dogs and districts of Zutich. Not
 
 To run the streamlit app online: [link]
 
-To see run the streamlit app locally:
+To run the streamlit app locally:
 - Clone the repo
 - Install libraries from requirements.txt
 - In the repo directory run `streamlit run st_app_zh_dogs.py`
